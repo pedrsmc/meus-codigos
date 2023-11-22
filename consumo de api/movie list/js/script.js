@@ -29,7 +29,7 @@ async function search() {
                 let item = document.createElement("div")
                 item.classList.add("item")
 
-                item.innerHTML = `<img src= "${element.Poster}"/><p>${element.Title}</p>`
+                item.innerHTML = `<img src= "${element.Poster}"/><p>${element.Title} (${element.Year})</p>`
 
                 list.appendChild(item)
             });

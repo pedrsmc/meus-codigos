@@ -95,18 +95,18 @@ h1 {
     align-items: center;
     height: fit-content;
     width: 220px;
-    gap: 30px;
+    gap: 10px;
+    text-align: center;
     padding: 20px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.445);
     border-radius: 10px;
-    border: 1px solid white;
     color: white;
     font-weight: 200;
     transition: .5s ease-out;
+    border: 1px solid white;
 }
 
 .item:hover {
-    background: grey;
+    background: rgb(73, 73, 73);
     transition: .5s ease-out;
 }
 
