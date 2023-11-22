@@ -21,7 +21,6 @@ async function search() {
         .then(answer => answer.json())
 
         if (data.Response === "True") {
-            bottomBox.style.width = "100vw"
 
             const list = document.querySelector('.item-box')
             list.innerHTML = ""
