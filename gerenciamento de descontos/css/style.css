@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap');
+
+
+body {
+    height: 100vh;
+    display: flex;
+    background-image: url('/images/background.jpg');
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+.principal {
+    margin: auto;
+    width: 990px;
+    height: fit-content;
+    display: flex;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 30px;
+}
+
+.produtoField {
+    width: 600px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    background: rgb(12, 129, 165);
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+.produtoField input {
+    background: rgb(12, 129, 165);
+}
+
+.produtoField input::placeholder {
+    color: rgb(185, 185, 185);
+}
+
+.produtoField p {
+    color: white;
+}
+
+.descontoField {
+    width: 600px;
+    padding: 30px;
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+    background: white;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+p {
+    font-size: 19px;
+    font-weight: 700;
+    color: rgb(37, 40, 206);
+}
+
+#valorDesconto {
+    font-family: 'Roboto', sans-serif;
+    border: none;
+    border-bottom: 2px solid rgb(202, 202, 202);
+    width: 460px;
+    font-size: 17px;
+    outline: none;
+}
+
+#dataFinal {
+    font-family: 'Roboto', sans-serif;
+    border: none;
+    border-bottom: 2px solid rgb(202, 202, 202);
+    width: 460px;
+    font-size: 17px;
+    outline: none;
+}
+
+#nomeProduto,
+#precoProduto,
+#categoriaProduto {
+    font-family: 'Roboto', sans-serif;
+    border: none;
+    border-bottom: 2px solid rgb(255, 255, 255);
+    width: 460px;
+    font-size: 17px;
+    outline: none;
+    color: white;
+}
+
+#resultado {
+    text-align: center;
+    font-weight: normal;
+}
+
+.radios {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 460px;
+    color: rgb(37, 40, 206);
+}
+
+.cadastrarDiv {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.cadastrarDiv button {
+    color: rgb(12, 129, 165);
+    font-family: 'Roboto', sans-serif;
+    width: 130px;
+    height: 50px;
+    border: none;
+    border-radius: 30px;
+    background: white;
+    font-size: 15px;
+    cursor: pointer;
+    font-weight: 700;
+}
