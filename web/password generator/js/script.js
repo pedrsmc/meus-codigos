@@ -4,8 +4,6 @@ const inputBox = document.querySelector('.input-box')
 const copyBtn = document.querySelector('#copyBtn')
 const lengthInput = document.querySelector('#length')
 
-
-
 const upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 const lowerCase = "abcdefghijklmnopqrstuvwxyz"
 const number = "0123456789"
