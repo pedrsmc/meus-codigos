@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Gere uma<br><span>Senha Aleatória</span></h1>
+        <div class="input-box">
+            <input type="text" id="password" readonly>
+            <i class="fa-solid fa-copy" id="copyBtn"></i>
+        </div>
+        <div class="length-box">
+            <p>Quantidade de caracteres:</p>
+            <input type="number" id="length">
+        </div>
+        <p id="advice">
+            A quantidade de caracteres deve ser um valor entre 4 (valor mínimo) e 20 (valor máximo).<br>
+        </p>
+        <button id="generateBtn">
+            Gerar senha
+            <i class="fa-solid fa-rotate-left"></i>
+        </button>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
