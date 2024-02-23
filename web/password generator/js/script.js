@@ -3,6 +3,7 @@ const password = document.querySelector('#password')
 const inputBox = document.querySelector('.input-box')
 const copyBtn = document.querySelector('#copyBtn')
 const lengthInput = document.querySelector('#length')
+const advice = document.querySelector("#advice")
 
 const upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 const lowerCase = "abcdefghijklmnopqrstuvwxyz"
@@ -19,13 +20,18 @@ function validation() {
     let value = lengthInput.value
 
     if (value == "") {
-        alert('Por favor, digite a quantidade de caracteres que deseja que senha gerada possua.')
+        inputBox.style.border = "2px solid #ca1010"
+        advice.textContent = "Digite a quantidade de caracteres que deseja que a senha possua."
     } else {
-        if (value < 4) {
-            alert('Por favor, digite um valor maior.')
-        } else if (value > 20) {
-            alert('Por favor, digite um valor menor.')
+        if (value < 6) {
+            inputBox.style.border = "2px solid #ca1010"
+            advice.textContent = "Quantidade de caracteres muito baixa!"
+        } else if (value > 50) {
+            inputBox.style.border = "2px solid #ca1010"
+            advice.textContent = "Quantidade de caracteres muito alta!"
         } else {
+            inputBox.style.border = ""
+            advice.textContent = ""
             generatePassword(value)
         }
     }
