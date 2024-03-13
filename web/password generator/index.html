@@ -12,21 +12,22 @@
 <body>
     <div class="container">
         <h1>Gere uma<br><span>Senha Aleatória</span></h1>
+
         <div class="input-box">
             <input type="text" id="password" readonly>
-            <i class="fa-solid fa-copy" id="copyBtn"></i>
+
+            <div class="length-box">
+                <input type="range" min="6" max="25" value="6" id="length">
+                <p id="lengthText">6 caracteres</p>
+            </div>
         </div>
-        <div class="length-box">
-            <p>Quantidade de caracteres:</p>
-            <input type="number" id="length">
-        </div>
+
         <p id="advice">
-           
-        </p>
-        <button id="generateBtn">
-            Gerar senha
-            <i class="fa-solid fa-rotate-left"></i>
-        </button>
+
+            <button id="generateBtn">
+                Gerar senha
+                <i class="fa-solid fa-rotate-left"></i>
+            </button>
     </div>
 
     <script src="js/script.js"></script>
