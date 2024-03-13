@@ -6,6 +6,7 @@ const place = document.querySelector('#place')
 const complement = document.querySelector('#complement')
 const cepButton = document.querySelector('#cepButton')
 const container = document.querySelector('.container')
+const warning = document.querySelector('#warning')
 let justNumbers
 
 cepButton.addEventListener('click', validation)
@@ -37,17 +38,23 @@ function validation() {
     let inputValue = inputCep.value
 
     if (inputValue != "") {
-        if (inputValue.length == 8) {
-            if (justNumbers == true) {
+        warning.textContent = ""
+        if (justNumbers == true) {
+            warning.textContent = ""
+
+            if (inputValue.length == 8) {
+                warning.textContent = ""
                 searchCep()
+
             } else {
-                alert('Digite o CEP apenas com valores numéricos.')
+                warning.textContent = "A quantidade de caracteres está incorreta!"
             }
+
         } else {
-            alert('o CEP deve conter exatos 8 caracteres.')
+            warning.textContent = "Digite apenas números!"
         }
     } else {
-        alert('Digite o CEP desejado.')
+        warning.textContent = "Opa! Preciso que você digite um CEP válido para realizar uma busca."
     }
 }
 
@@ -58,8 +65,8 @@ async function searchCep() {
         let data = await fetch(`https://viacep.com.br/ws/${cep}/json/`)
             .then(res => res.json())
 
-        if (data.erro == true) {
-            alert("CEP inexistente. Por favor tente novamente.")
+        if (data.erro == "true") {
+            warning.textContent = "CEP não encontrado."
         } else {
             neighborhood.textContent = data.bairro
             city.textContent = data.localidade
@@ -74,6 +81,5 @@ async function searchCep() {
         }
     } catch (erro) {
         console.log(`Erro encontrado: ${erro.message}`)
-        alert('Ocorreu um erro ao buscar o CEP. Por favor, tente novamente.')
     }
 }

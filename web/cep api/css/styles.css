@@ -80,19 +80,16 @@ body {
 }
 
 .search-box button {
-    background: #208b3a;
+    background: linear-gradient(90deg, #26a145, #155d27);
     border: none;
     width: 70px;
+    height: 46px;
     font-size: 15px;
     font-weight: 500;
     color: #fff;
     border-radius: 7px;
     cursor: pointer;
     transition: all .3s ease-in-out;
-}
-
-.search-box button:hover {
-    background: #155d27;
 }
 
 .search-box button:active {
@@ -120,4 +117,19 @@ body {
     display: flex;
     flex-direction: column;
     gap: 10px;
+}
+
+.warning-box {
+    width: 300px;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+#warning {
+    color: #b10c0c;
+    font-size: 14px;
+    font-weight: 500;
 }
