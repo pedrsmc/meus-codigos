@@ -2,23 +2,30 @@ const taskInput = document.querySelector('#taskInput')
 const trashBtn = document.querySelector('#trashBtn')
 const addBtn = document.querySelector('#addBtn')
 
-addBtn.addEventListener('click', verifyInput)
-trashBtn.addEventListener('click', removeAllTasks)
+
 taskInput.addEventListener('keydown', function (event) {
     if (event.key === "Enter") {
         verifyInput()
     }
 })
 
-function verifyInput() {
+addBtn.addEventListener('click', verifyInput = () => {
     if (taskInput.value == "") {
         alert('Náo é possível adicionar uma tarefa vazia!')
     } else {
         addTask()
     }
-}
+})
 
-function addTask() {
+trashBtn.addEventListener('click', removeAllTasks = () => {
+    const taskList = document.querySelector('.task-list');
+
+    while (taskList.firstChild) {
+        taskList.firstChild.remove();
+    }
+})
+
+const addTask = () => {
     const taskList = document.querySelector('.task-list')
 
     let task = document.createElement('div')
@@ -39,31 +46,19 @@ function addTask() {
     buttonsBox.appendChild(removeBtn)
     buttonsBox.appendChild(okBtn)
 
-    removeBtn.addEventListener('click', removeTask)
-    okBtn.addEventListener('click', doneTask)
-}
+    removeBtn.addEventListener('click', function removeTask() {
+        const taskToRemove = this.closest('.task');
+    
+        if (taskToRemove) {
+            taskToRemove.remove();
+        }
+    })
 
-function removeTask() {
-    const taskToRemove = this.closest('.task');
-
-    if (taskToRemove) {
-        taskToRemove.remove();
-    }
-}
-
-function removeAllTasks() {
-    const taskList = document.querySelector('.task-list');
-
-    // Remove todas as tarefas da lista
-    while (taskList.firstChild) {
-        taskList.firstChild.remove();
-    }
-}
-
-function doneTask() {
-    const taskToMark = this.closest('.task');
-
-    if (taskToMark) {
-        taskToMark.classList.add('done');
-    }
+    okBtn.addEventListener('click', function doneTask() {
+        const taskToMark = this.closest('.task');
+    
+        if (taskToMark) {
+            taskToMark.classList.add('done');
+        }
+    })
 }

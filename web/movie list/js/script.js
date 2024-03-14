@@ -3,14 +3,7 @@ const inputName = document.querySelector('#input-name')
 const button = document.querySelector('#button')
 const bottomBox = document.querySelector('.bottom-box')
 
-button.addEventListener('click', search)
-inputName.addEventListener('keydown', function (event) {
-    if (event.key === "Enter") {
-        search()
-    }
-})
-
-async function search() {
+button.addEventListener('click', async function search() {
     let search = inputName.value
     
     if (search === "") {
@@ -37,4 +30,10 @@ async function search() {
             alert("Movie not found!")
         }
     }
-}
+})
+
+inputName.addEventListener('keydown', function (event) {
+    if (event.key === "Enter") {
+        search()
+    }
+})

@@ -5,46 +5,62 @@ const state = document.querySelector('#state')
 const place = document.querySelector('#place')
 const complement = document.querySelector('#complement')
 const cepButton = document.querySelector('#cepButton')
-const container = document.querySelector('.container')
 const warning = document.querySelector('#warning')
-let justNumbers
 
-cepButton.addEventListener('click', validation)
+cepButton.addEventListener('click', function() {
+    validation(inputCep.value)
+})
 
 inputCep.addEventListener('keyup', function (event) {
     if (event.key === "Enter") {
-        validation()
+        validation(inputCep.value)
+        
     } else {
         setTimeout(function () {
-            inputCep.value = inputCep.value.replace(/[\s-]/g, '');
-        }, 0);
-        inputColor()
+            inputCep.value = inputCep.value.replace(/[\s-]/g, '')
+            
+            const inputColor = () => {
+                if (isNaN(inputCep.value)) {
+                    inputCep.style.outlineColor = 'red'
+                } else {
+                    inputCep.style.outlineColor = '#2dc653'
+                }
+            }
+        }, 0)
     }
 })
 
-function inputColor() {
-    let inputChar = inputCep.value
 
-    if (isNaN(inputChar)) {
-        inputCep.style.outlineColor = 'red'
-        justNumbers = false
-    } else {
-        inputCep.style.outlineColor = '#2dc653'
-        justNumbers = true
+async function searchCep(cep) {
+    try {
+        let data = await fetch(`https://viacep.com.br/ws/${cep}/json/`)
+            .then(res => res.json())
+
+        if (data.erro === true) {
+            alert("sadada")
+
+        } else {
+            neighborhood.textContent = (data.bairro || "Não informado")
+            city.textContent = (data.localidade || "Não informado")
+            state.textContent = (data.uf || "Não informado")
+            place.textContent = (data.logradouro || "Não informado")
+            complement.textContent = (data.complemento || "Não informado")
+        }
+    } catch (erro) {
+        console.log(`Erro encontrado: ${erro.message}`)
     }
 }
 
-function validation() {
-    let inputValue = inputCep.value
-
+function validation(inputValue) {
     if (inputValue != "") {
         warning.textContent = ""
-        if (justNumbers == true) {
+
+        if (!isNaN(inputValue)) {
             warning.textContent = ""
 
             if (inputValue.length == 8) {
                 warning.textContent = ""
-                searchCep()
+                searchCep(inputValue)
 
             } else {
                 warning.textContent = "A quantidade de caracteres está incorreta!"
@@ -55,31 +71,5 @@ function validation() {
         }
     } else {
         warning.textContent = "Opa! Preciso que você digite um CEP válido para realizar uma busca."
-    }
-}
-
-async function searchCep() {
-    let cep = inputCep.value
-
-    try {
-        let data = await fetch(`https://viacep.com.br/ws/${cep}/json/`)
-            .then(res => res.json())
-
-        if (data.erro == "true") {
-            warning.textContent = "CEP não encontrado."
-        } else {
-            neighborhood.textContent = data.bairro
-            city.textContent = data.localidade
-            state.textContent = data.uf
-            place.textContent = data.logradouro
-
-            if (data.complemento == "") {
-                complement.textContent = "Nenhum"
-            } else {
-                complement.textContent = data.complemento
-            }
-        }
-    } catch (erro) {
-        console.log(`Erro encontrado: ${erro.message}`)
     }
 }

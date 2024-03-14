@@ -12,19 +12,7 @@ const desc = document.querySelector('#desc')
 const advice = document.querySelector('.advice-box')
 const adviceText = document.querySelector('#advice')
 
-button.addEventListener('click', search)
-inputName.addEventListener('keydown', function(event) {
-    if (event.key === "Enter") {
-        search()
-    }
-})
-inputYear.addEventListener('keydown', function(event) {
-    if (event.key === "Enter") {
-        search()
-    }
-})
-
-async function search() {
+button.addEventListener('click', async function search() {
     let movieName = inputName.value
     let movieYear = inputYear.value
     const image = document.querySelector('#image')
@@ -52,4 +40,16 @@ async function search() {
             adviceText.textContent = "Movie not found. Please verify if the movie year or name is correct."
         }  
     }
-}
+})
+
+inputName.addEventListener('keydown', function(event) {
+    if (event.key === "Enter") {
+        search()
+    }
+})
+
+inputYear.addEventListener('keydown', function(event) {
+    if (event.key === "Enter") {
+        search()
+    }
+})
