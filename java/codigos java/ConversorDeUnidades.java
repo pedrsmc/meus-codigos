@@ -18,25 +18,33 @@ public class ConversorDeUnidades {
             case 1:
                 System.out.print("Digite a temperatura em Celsius: ");
                 double celsius = scanner.nextDouble();
-                double fahrenheit = celsiusParaFahrenheit(celsius);
+                
+                double fahrenheit = (celsius * 9 / 5) + 32;
+
                 System.out.println("A temperatura em Fahrenheit é: " + fahrenheit);
                 break;
             case 2:
                 System.out.print("Digite a distância em metros: ");
                 double metros = scanner.nextDouble();
-                double centimetros = metrosParaCentimetros(metros);
+                
+                double centimetros = metros * 100;
+                
                 System.out.println("A distância em centímetros é: " + centimetros);
                 break;
             case 3:
                 System.out.print("Digite a distância em quilômetros: ");
                 double quilometros = scanner.nextDouble();
-                double milhas = quilometrosParaMilhas(quilometros);
+
+                double milhas = quilometros * 0.621371;
+
                 System.out.println("A distância em milhas é: " + milhas);
                 break;
             case 4:
                 System.out.print("Digite o volume em litros: ");
                 double litros = scanner.nextDouble();
-                double mililitros = litrosParaMililitros(litros);
+
+                double mililitros = litros * 1000;
+
                 System.out.println("O volume em mililitros é: " + mililitros);
                 break;
             default:
@@ -44,21 +52,5 @@ public class ConversorDeUnidades {
         }
         
         scanner.close();
-    }
-    
-    public static double celsiusParaFahrenheit(double celsius) {
-        return (celsius * 9 / 5) + 32;
-    }
-    
-    public static double metrosParaCentimetros(double metros) {
-        return metros * 100;
-    }
-    
-    public static double quilometrosParaMilhas(double quilometros) {
-        return quilometros * 0.621371;
-    }
-    
-    public static double litrosParaMililitros(double litros) {
-        return litros * 1000;
     }
 }
