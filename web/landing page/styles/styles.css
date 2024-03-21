@@ -83,7 +83,17 @@ header {
     font-weight: 500;
 }
 
-#start {
+i {
+    color: var(--white);
+}
+
+#start,
+#about {
+    transition: .2s ease-in-out;
+}
+
+#start:hover,
+#about:hover {
     color: var(--desertsand);
 }
 
@@ -100,6 +110,7 @@ header {
     cursor: pointer;
     border: 2px solid var(--desertsand);
     transition: all .3s ease-in-out;
+    gap: 10px;
 }
 
 #services_btn:hover {
@@ -120,6 +131,7 @@ header {
     display: flex;
     flex-direction: column;
     gap: 30px;
+    cursor: default;
 }
 
 .text-field p {
@@ -157,7 +169,7 @@ header {
 }
 
 .sign-div input {
-    width: 70%;
+    width: 60%;
     height: 60px;
     font-size: 18px;
     padding: 10px;
@@ -171,12 +183,16 @@ header {
     border: none;
     padding: 10px;
     border-radius: 5px;
-    background: #e2857f;
+    background: var(--coralpink);
     font-weight: 700;
     color: var(--white);
     font-size: 18px;
     box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.200);
-    cursor: pointer
+    cursor: pointer;
+    transition: .3s ease-in-out; 
+}
+.sign-div button:hover {
+    background: #c26f6a;
 }
 
 @media screen and (max-width: 700px) {
@@ -184,11 +200,7 @@ header {
     #start {
         display: none;
     }
-    
-    #home_icon {
-        display: none;
-    }
-    
+
     .sign-div input {
         width: 170%;
         margin-left: 160px;
@@ -197,5 +209,11 @@ header {
     .sign-div button,
     .sign-div p {
         margin-left: 160px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    #home_icon {
+        display: none;
     }
 }
