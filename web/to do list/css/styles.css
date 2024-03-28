@@ -1,122 +1,123 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Open Sans", sans-serif;
 }
 
 body {
-    background: #444;
-}
-
-.top-box {
+    width: 100vw;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #333;
-    padding: 10px;
-    height: 90px;
-    width: 100%;
+    background: #222;
+}
+
+.container {    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    height: 110px;
+    width:550px;
     gap: 20px;
+    background: #f2f2f2;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px 5px;
+}
+
+.top-box {
+    width: 100%;
+    gap: 30px;   
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .top-box button {
-    background: transparent;
-    height: 45px;
-    width: 45px;
-    border-radius: 100%;
+    background: #96315D;
     border: none;
-    color: #666;
-    font-size: 20px;
+    color: #f2f2f2;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.500);
     cursor: pointer;
-}
-
-#trashBtn {
-    border-radius: 0px;
-    width: 70px;
-    height: 70px;
-    border-radius: 100%;
-}
-
-.top-box button p {
-    font-size: 12px;
-}
-
-.top-box button:hover {
-    background: #222;
-    transition: all .3s ease-in-out;
-}
-
-.top-box button:active {
-    background: transparent;
-    transition: all .1s ease-in-out;
+    font-size: 18px;
 }
 
 .top-box input {
-    padding: 15px;
-    background: #222;
+    padding: 15px 25px 15px;
+    background: #d1d1d1;
     border: none;
     border-radius: 30px;
-    width: 50%;
+    width: 69%;
     outline: none;
     font-size: 16px;
-    color: #666;
+    font-weight: 500;
 }
 
 .top-box input::placeholder {
-    color: #5555;
+    color: #838383;
+    font-weight: 500;
 }
 
 .task-list {
     display: flex;
     flex-direction: column;
     padding: 10px;
+    gap: 20px;
+    width: 100%;
+}
+
+.task {
+    display: flex;
     gap: 10px;
 }
 
-.task-list .task {
+.text-box {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    background-color: #333;
+    font-weight: 600;
+    width: 80%;
     padding: 10px;
-    height: 70px;
-    font-size: 18px;
-    border-radius: 10px;
-    color: #666;
-    cursor: default;
+    border-radius: 15px;
+    transition: .3s ease-in-out;
 }
 
-.task-list .task:hover {
-    background: #222;
-    transition: all .3s ease-in-out;
-    color: #cccc;
+.text-box.done {
+    background: #96315D;  
+    color: #f2f2f2;
+    box-shadow: 0px 5px 5px 2px rgba(0, 0, 0, 0.200);
+}
+
+.buttons-box {
+    display: flex;
+    gap: 10px;
 }
 
 .buttons-box button {
     background: transparent;
     height: 45px;
     width: 45px;
-    border-radius: 100%;
     border: none;
-    color: #666;
-    font-size: 18px;
+    font-size: 15px;
     cursor: pointer;
+    border-radius: 50%;
+    color: #f2f2f2;
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.500);
+    
 }
 
-#removeBtn:hover {
-    color: rgb(167, 8, 8);
-    transition: all .3s ease-in-out;
+#removeBtn {
+    background: #af0202;
 }
 
-#okBtn:hover {
-    color:green;
-    transition: all .3s ease-in-out;
+#okBtn {
+    background: #258300;
 }
 
-.task.done {
-    box-shadow: 0px 0px 3px rgb(0, 128, 0);    
-}
 

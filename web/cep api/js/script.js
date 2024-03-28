@@ -37,7 +37,7 @@ async function searchCep(cep) {
             .then(res => res.json())
 
         if (data.erro === true) {
-            alert("sadada")
+            alert("O CEP informado não é válido.")
 
         } else {
             neighborhood.textContent = (data.bairro || "Não informado")
