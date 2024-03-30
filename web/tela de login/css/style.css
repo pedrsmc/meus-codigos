@@ -22,6 +22,7 @@ body {
 .box-left h1 {
     color: white;
     cursor: default;
+    font-size: 60px;
 }
 
 .box-left {
@@ -29,6 +30,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-left: 100px;
 }
 
 .box-left img {
