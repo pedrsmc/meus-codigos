@@ -82,10 +82,11 @@ body {
     display: flex;
     align-items: center;
     font-weight: 600;
-    width: 80%;
+    max-width: 80%;
     padding: 10px;
     border-radius: 15px;
     transition: .3s ease-in-out;
+    overflow: hidden;
 }
 
 .text-box.done {
