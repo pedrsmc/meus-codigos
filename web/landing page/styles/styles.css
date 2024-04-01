@@ -5,6 +5,7 @@
     --coralpink: #e2857f;
     --desertsand: #d6a586;
     --cerulean: #4281a4;
+    --dark-cerulean: #125579;
     --white: #ffffff;
 }
 
@@ -25,6 +26,7 @@ header {
     position: sticky;
     top: 0;
     background: var(--cerulean);
+    z-index: 1000;
 }
 
 .navbar {
@@ -131,17 +133,19 @@ i {
     padding: 40px;
 }
 
-.text-field {
+.top-field {
     width: 50%;
     display: flex;
     flex-direction: column;
     gap: 30px;
     cursor: default;
+    justify-self: center;
+    align-items: center;
 }
 
 .text-field p {
     color: var(--white);
-    font-size: 100px;
+    font-size: 70px;
     font-weight: 900;
 }
 
@@ -151,6 +155,12 @@ i {
     font-weight: 900;
 }
 
+.text-field p,
+.text-field span {
+    opacity: 0%;
+    transition:  1s ease-in-out;
+}
+
 .image-div {
     width: 65%;
     display: flex;
@@ -158,8 +168,8 @@ i {
     align-items: center;
 }
 
-#home_icon {
-    width: 800px;
+#home-img {
+    width: 900px;
 }
 
 .sign-div {
@@ -170,10 +180,15 @@ i {
     align-items: center;
     gap: 30px;
     margin-top: 50px;
+    background: var(--dark-cerulean);
+    padding: 50px;
+    width: 70%;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.200);
 }
 
 .sign-div input {
-    width: 60%;
+    width: 100%;
     height: 60px;
     font-size: 18px;
     padding: 10px;
@@ -202,12 +217,22 @@ i {
 
 .services-box {
     display: flex;
-    flex-direction: row;
+    flex-direction: wrap;
     width: 100%;
     justify-content: center;
     align-items: center;
     gap: 100px;
     padding: 50px;
+}
+
+#our-plans {
+    margin-top: 100px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 25px;
+    color: var(--white);
+    opacity: 0%;
+    transition: 1.5s ease-in-out;
 }
 
 .service-field {
@@ -222,6 +247,8 @@ i {
     gap: 20px;
     box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.200);
     cursor: default;
+    opacity: 0%;
+    transition: 1.5s ease-in-out;
 }
 
 .service-field h1 {
@@ -259,29 +286,18 @@ i {
 }
 
 @media screen and (max-width: 700px) {
-    #home_icon,
+    #home-img,
     #about,
     #start {
         display: none;
     }
 
-    .sign-div input {
+    .sign-div {
         width: 170%;
-        margin-left: 160px;
-    }
-
-    .sign-div button,
-    .sign-div p {
         margin-left: 160px;
     }
 
     .services-box {
         flex-direction: column;
-    }
-}
-
-@media screen and (max-width: 1200px) {
-    #home_icon {
-        width: 70%;
     }
 }
