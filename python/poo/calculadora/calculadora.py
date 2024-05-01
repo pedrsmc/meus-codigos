@@ -3,6 +3,9 @@ class Calculadora:
     numbers = []
 
     def __init__(self):
+        self.quantity = 0;
+        self.numbers = []
+
         self.quantity = int(
             input("Digite a quantidade de números que deseja calcular: "))
 

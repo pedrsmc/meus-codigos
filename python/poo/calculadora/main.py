@@ -10,14 +10,16 @@ while True:
         operation = input(
             "Digite o símbolo da operação você deseja realizar: ")
 
-        calculadora = Calculadora()
         
         match operation:
             case '+':
+                calculadora = Calculadora()
                 print("\nResultado = %d" % calculadora.sum())
             case '-':
+                calculadora = Calculadora()
                 print("\nResultado = %d" % calculadora.subtraction())
             case 'x':
+                calculadora = Calculadora()
                 print("\nResultado = %d" % calculadora.multiply())
             case _:
                 print("Digite um símbolo válido!")
