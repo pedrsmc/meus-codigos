@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(44, 44, 44);
+}
+
+h1 {
+    width: 500px;
+    color: white;
+    font-weight: 500;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 100vh;
+    padding: 10px;
+}
+
+.search-box {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    gap: 30px;
+}
+
+.search-box button {
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    height: 40px;
+    width: 70px;
+    cursor: pointer;
+    border-radius: 100%;
+    transition: all .5s ease-out;
+}
+
+.search-box button i {
+    color: grey;
+    font-size: 18px;
+}
+
+.search-box #input-year {
+    background: rgb(75, 75, 75);
+    border: none;
+    width: 200px;
+    height: 40px;
+    padding: 10px;
+    font-size: 15px;
+    outline: none;
+    color: rgb(214, 214, 214);
+}
+
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.search-box #input-name {
+    background: rgb(75, 75, 75);
+    border: none;
+    width: 200px;
+    height: 40px;
+    padding: 10px;
+    font-size: 15px;
+    outline: none;
+    color: rgb(214, 214, 214);
+}
+
+.search-box button:active {
+    background: rgba(0, 0, 0, 0.212);
+    transition: all .1s ease-in;
+}
+
+.advice-box {
+    display: none;
+    align-items: first baseline;
+    gap: 10px;
+    width: 500px;
+    color: rgb(226, 0, 0);
+}
+
+.advice-box p {
+    font-size: 14px;
+}
+
+.title-box {
+    margin-top: -20px;
+    height: 100px;
+    gap: 30px;
+    display: flex;
+    color: white;
+    font-size: 20px;
+    font-weight: 200;
+}
+
+.img-box img {
+    width: 500px;
+    height: 500px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.459);
+}
+
+
+.img-box {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.desc-box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.desc-box hr {
+    width: 500px;
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.411);
+    border-radius: 1px;
+}
+
+.desc-box #desc {
+    width: 500px;
+    text-align: left;
+    color: white;
+    font-size: 18px;
+}
+
+.genre-box p,
+.dir-box p,
+.rotten-box p {
+    color: white;
+    font-weight: 200;
+}
+
+.genre-box,
+.dir-box,
+.rotten-box {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.genre-box h3,
+.dir-box h3,
+.rotten-box h3 {
+    font-size: 18px;
+    font-weight: 500;
+    color: rgb(86, 97, 194);
+}
