@@ -1,4 +1,4 @@
-const key = 'e355cb35c84a8d8d1ebea310e3e0aca9'
+const key = [your_api_key]
 const town = document.querySelector('#town')
 const celsius = document.querySelector('#celsius')
 const desc = document.querySelector('#desc')
