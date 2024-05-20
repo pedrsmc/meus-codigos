@@ -1,4 +1,4 @@
-const key = "4ce93ece"
+const key = [your_api_key]
 const inputName = document.querySelector('#input-name')
 const button = document.querySelector('#button')
 const bottomBox = document.querySelector('.bottom-box')
