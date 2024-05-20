@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultar por CEP</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="search-box">
+            <div class="input-field">
+                <input type="text" id="cep" required>
+                <label>Digite aqui seu CEP</label>
+                <div class="warning-box">
+                    <p id="warning"></p>
+                </div>
+            </div>
+            <button id="cepButton">Buscar</button>
+        </div>
+
+        <div class="content-box">
+            <div class="top-field">
+                <div>
+                    <p class="title">Bairro:</p>
+                    <p id="neighborhood"></p>
+                </div>
+                <div>
+                    <p class="title">Cidade:</p>
+                    <p id="city"></p>
+                </div>
+                <div>
+                    <p class="title">UF:</p>
+                    <p id="state"></p>
+                </div>
+            </div>
+
+            <div class="bottom-field">
+                <div>
+                    <p class="title">Logradouro:</p>
+                    <p id="place"></p>
+                </div>
+                <div>
+                    <p class="title">Complemento:</p>
+                    <p id="complement"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(90deg, #10451d, #2dc653);
+}
+
+.container {
+    width: fit-content;
+    height: fit-content;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.50);
+}
+
+.content-box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.search-box {
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+}
+
+.search-box input {
+    width: 300px;
+    padding: 10px;
+    font-size: 15px;
+    outline: none;
+    border: 1px solid #adb5bd;
+    border-radius: 7px;
+}
+
+.input-field {
+    position: relative;
+}
+
+.input-field label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: #aaaaaa;
+    pointer-events: none;
+    transition: all .2s ease-in;
+    background: #fff;
+    border-left: 3px solid #fff;
+    border-right: 3px solid #fff;
+}
+
+.input-field input:focus,
+.input-field input:valid {
+    outline: auto;
+    outline-color: #2dc653;
+}
+
+.input-field input:focus+label,
+.input-field input:valid+label {
+    color: #2dc653;
+    transform: translate(-5px, -18px);
+    font-size: 12px;
+    transition: all .2s ease-out;
+}
+
+.search-box button {
+    background: linear-gradient(90deg, #26a145, #155d27);
+    border: none;
+    width: 70px;
+    height: 46px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #fff;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+
+.search-box button:active {
+    transform: scale(.95);
+    transition: all .1s;
+}
+
+.content-box p {
+    margin: 10px 0px 0px;
+    color: #495057;
+}
+
+.content-box .title {
+    font-weight: 500;
+    color: #000;
+    pointer-events: none;
+}
+
+.top-field {
+    display: flex;
+    justify-content: space-between;
+}
+
+.bottom-field {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.warning-box {
+    width: 300px;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+#warning {
+    color: #b10c0c;
+    font-size: 14px;
+    font-weight: 500;
+}
